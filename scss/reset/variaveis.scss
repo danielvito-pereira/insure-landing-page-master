@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+/* Aquí definimos las Custom properties */
+:root{
+  --DarkViolet    : hsl(256, 26%, 20%);
+  --GrayishBlue   : hsl(216, 30%, 68%);
+  --negro         : #393939;
+  --blanco        : #ececec;
+  --sombra-ppal   : #c9c9c9;
+  --sombra-sec    : #ffffff;
+  --borde-negro   : #00000050;
+
+  --marcado       : rgb(127, 195, 255);
+
+  --VeryDarkViolet: hsl(270, 9%, 17%);
+  --DarkGrayishViolet: hsl(273, 4%, 51%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+  /* Tipografía */
+  --tipo-principal  : 'Karla', sans-serif;
+   /* Tipografía headings*/
+   --tipo-secundaria  : 'DM Serif Display', serif;
+}
+  
+
+@media (prefers-color-scheme: dark) {
+  :root{
+      --negro         : #ececec;
+      --blanco        : #303030;
+      --sombra-ppal   : #242424;
+      --sombra-sec    : #3c3c3c;
+
+      --borde-negro   : #FFFFFF50;
+  }
+}
+
+

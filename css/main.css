@@ -1,0 +1,413 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+/* Aquí definimos las Custom properties */
+:root {
+  --DarkViolet: hsl(256, 26%, 20%);
+  --GrayishBlue: hsl(216, 30%, 68%);
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
+  --VeryDarkViolet: hsl(270, 9%, 17%);
+  --DarkGrayishViolet: hsl(273, 4%, 51%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+  /* Tipografía */
+  --tipo-principal: "Karla", sans-serif;
+  /* Tipografía headings*/
+  --tipo-secundaria: "DM Serif Display", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #FFFFFF50;
+  }
+}
+/*
+    Estilos generales para que las etiquetas no contengan propiedades
+    que nos estorben y en todos los navegadores se vean correctamente
+*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+video {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  hyphens: auto;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+}
+
+body {
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: var(--blanco);
+  color: var(--negro);
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Código */
+.NavMenu {
+  background-color: var(--blanco);
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  background-color: var(--VeryLightGray);
+  color: #ffffff;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1920px;
+}
+
+.header .button {
+  display: none;
+  cursor: pointer;
+}
+
+.header .svg {
+  width: 2em;
+  height: 2em;
+  fill: var(--VeryDarkViolet);
+}
+
+.header .ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 50px;
+}
+
+.header .li {
+  margin: 0 0.5em;
+  color: var(--VeryLightGray) !important;
+}
+.header .li:hover {
+  transition: all 0.5s ease-in-out;
+}
+
+.btnTablet {
+  display: none;
+}
+
+.bt {
+  display: flex;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: var(--VeryLightGray);
+  border-radius: 8px;
+  border: 5px solid var(--VeryLightGray);
+  cursor: pointer;
+}
+.bt:hover {
+  transition: all 0.5s ease-in-out;
+}
+
+.btnTablet {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
+.header .button.activo .svg {
+  display: none;
+}
+.header .button.activo .close {
+  display: block;
+}
+
+@media screen and (max-width: 1274px) {
+  .wrapper {
+    justify-content: space-between !important;
+    align-items: center;
+  }
+  .header .button {
+    display: block;
+  }
+  .header .nav { /*quando o botão não estiver ativo */
+    width: 100%;
+    /* display: none;*/
+    overflow: hidden;
+    pointer-events: none; /*para não ter efeito no mouse*/
+    height: 0vh;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .nav.activo { /*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--VeryDarkViolet);
+  }
+  .close {
+    display: none;
+  }
+  .header .button.activo .svg {
+    display: none;
+  }
+  .header .button.activo .close {
+    display: block;
+  }
+  .header .ul {
+    flex-direction: column;
+  }
+  .header .li {
+    margin: 1em 0;
+  }
+  .btn {
+    display: flex;
+    flex-direction: column;
+    border-color: var(--DarkViolet);
+    color: var(--DarkViolet);
+  }
+  .btnTablet {
+    display: none !important;
+    width: 84%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  .header .button {
+    display: block;
+  }
+  .header .nav { /*quando o botão não estiver ativo */
+    width: 100%;
+    /* display: none;*/
+    overflow: hidden;
+    pointer-events: none; /*para não ter efeito no mouse*/
+    height: 0vh;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .nav.activo { /*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    width: 100%;
+    pointer-events: auto;
+    background-image: url(/images/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+  .header .ul {
+    flex-direction: column;
+  }
+  .header .li {
+    margin: 1em 0;
+    color: var(--VeryDarkViolet);
+  }
+  .btnTablet {
+    display: flex;
+    width: 84%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-inline: 1em;
+    border-color: var(--DarkViolet);
+    color: var(--DarkViolet);
+    border: 1px solid;
+  }
+  .btn {
+    display: none;
+  }
+}
+/*main*/
+.main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  color: var(--VeryLightGray);
+}
+
+.p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--VeryLightGray);
+}
+
+/*hero-section*/
+.hero-section {
+  width: 100%;
+  max-width: 120rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DarkViolet);
+}
+.hero-section .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 29.6875rem;
+  gap: 2.125rem;
+}
+
+/*process*/
+.process {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.125rem;
+  height: 79.6875rem;
+  background-color: var(--VeryLightGray);
+}
+.process #linha-horizontal {
+  width: 9.375rem;
+  border: 1px solid var(--DarkViolet);
+}
+.process .h1 {
+  color: var(--negro);
+}
+.process .p {
+  color: var(--negro);
+}
+.process .h2 {
+  text-align: center;
+  font-size: 1.55rem;
+  line-height: 2.25rem;
+  font-style: bold;
+}
+.process .prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  gap: 2.125rem;
+}
+.process .prices .svg {
+  width: 20%;
+}
+
+/*about*/
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--VeryLightGray);
+  height: 39.6875rem;
+}
+.about .-ab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 19.6875rem;
+  padding: 1rem;
+  gap: 3rem;
+  background-color: var(--DarkViolet);
+}
+
+/*# sourceMappingURL=main.css.map */

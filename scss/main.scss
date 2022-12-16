@@ -1,0 +1,302 @@
+@import 'reset/variaveis' , 'reset/mixins' , 'reset/reset' ;
+
+/* Código */
+.NavMenu{
+  background-color:var(--blanco); 
+  width: 100%;
+}
+.header{
+  width: 100%;
+  background-color:var(--VeryLightGray);
+  color: #ffffff;
+  padding:1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items: center;
+}
+.wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+  align-items:center;
+  width: 90%;
+  max-width:1920px;
+}
+.header .button{
+  display: none;
+  cursor: pointer;
+}
+.header .svg{
+  width: 2em;
+  height: 2em;
+  fill: var(--VeryDarkViolet);
+}
+.header .ul{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:flex-end;
+  align-items: center;
+  gap: 50px;
+}
+.header .li{
+  margin: 0 0.5em;
+  color: var(--VeryLightGray) !important;
+  &:hover{
+    
+    transition: all .5s ease-in-out;
+  }
+}
+.btnTablet {
+  display: none;
+}
+.bt{
+  display: flex;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: var( --VeryLightGray);
+  border-radius: 8px;
+  border: 5px solid var(--VeryLightGray);
+  cursor: pointer;
+  &:hover{
+
+    transition: all .5s ease-in-out;
+  }
+
+
+}
+.btnTablet {
+    display: none;
+}
+.close{
+  display: none;
+}
+.header .button.activo{
+  .svg{
+    display: none;
+  }
+  .close{
+    display: block;
+  }
+}
+@media screen and (max-width:1274px){
+  .wrapper{
+    justify-content:space-between !important;
+    align-items:center;
+  }
+  .header .button{
+    display: block;
+  }
+  .header .nav{/*quando o botão não estiver ativo */
+    width: 100%;
+   /* display: none;*/
+   overflow: hidden;
+   pointer-events: none;/*para não ter efeito no mouse*/
+   height: 0vh;
+   transition: all .5s ease-in-out;
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:center;
+   align-items: center;
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--VeryDarkViolet);
+ 
+  }
+  .close{
+    display: none;
+  }
+
+  .header .button.activo{
+    .svg{
+      display: none;
+    }
+    .close{
+      display: block;
+    }
+  }
+  .header .ul{
+    flex-direction: column;
+  }
+  .header .li{
+    margin: 1em 0;
+  }
+  .btn{
+    display: flex;
+    flex-direction: column;
+    border-color: var(--DarkViolet);
+    color: var(--DarkViolet);
+  }
+  .btnTablet {
+    display: none !important;
+    width: 84%;
+}
+}
+@media screen and (max-width:1400px ){
+  .wrapper{
+    justify-content:center;
+    align-items:center;
+  }
+  .header .button{
+    display: block;
+  }
+  .header .nav{/*quando o botão não estiver ativo */
+    width: 100%;
+   /* display: none;*/
+   overflow: hidden;
+   pointer-events: none;/*para não ter efeito no mouse*/
+   height: 0vh;
+   transition: all .5s ease-in-out;
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:center;
+   align-items: center;
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 50vh;
+    width: 100%;
+    pointer-events: auto;
+    background-image: url(/images/bg-pattern-intro-left-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size:cover;
+
+  }
+  .header .ul{
+    flex-direction: column;
+  }
+  .header .li{
+    margin: 1em 0;
+    color: var(--VeryDarkViolet);
+  }
+  .btnTablet {
+    display: flex;
+    width: 84%;
+    align-items: center;
+    justify-content:flex-end;
+    gap: 20px;
+    padding-inline:1em;
+    border-color: var(--DarkViolet);
+    color: var(--DarkViolet);
+    border:1px solid;
+  }
+  .btn{
+    display: none;
+  }
+}
+
+
+/*main*/
+.main{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+
+.h1{
+  text-align: center;
+  font-size:2.25rem;
+  line-height:2.25rem;
+  color: var(--VeryLightGray);
+}
+.p{
+  text-align: center;
+  font-size:1rem;
+  color: var(--VeryLightGray);
+}
+/*hero-section*/
+.hero-section {
+  width: 100%;
+  max-width:120rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DarkViolet);
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 29.6875rem;
+    gap: 2.125rem;
+  }
+}
+
+/*process*/
+
+.process{
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.125rem;
+  height: 79.6875rem;
+  background-color: var(--VeryLightGray);
+  #linha-horizontal {
+    width: 9.375rem;
+    border: 1px solid var(--DarkViolet );
+  }
+  .h1 {
+    color:var(--negro);
+  }
+  .p{
+    color:var(--negro);
+  }
+
+  .h2{
+    text-align: center;
+    font-size:1.55rem;
+    line-height:2.25rem;
+    font-style: bold;
+  }
+  .prices{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    gap: 2.125rem;
+    .svg{
+      width: 20%;
+    }
+  }
+}
+
+
+/*about*/
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background-color:var(--VeryLightGray);
+  height: 39.6875rem;
+  .-ab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 19.6875rem;
+    padding: 1rem;
+    gap: 3rem;
+    background-color:var(--DarkViolet);
+  }
+}
