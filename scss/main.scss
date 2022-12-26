@@ -9,7 +9,6 @@
   width: 100%;
   background-color:var(--VeryLightGray);
   color: #ffffff;
-  padding:1em;
   display: flex;
   flex-flow: row wrap;
   justify-content:center;
@@ -22,10 +21,14 @@
   align-items:center;
   width: 90%;
   max-width:1920px;
+  h1{
+    padding: 1rem;
+  }
 }
 .header .button{
   display: none;
   cursor: pointer;
+  padding-right: 1rem;
 }
 .header .svg{
   width: 2em;
@@ -37,56 +40,44 @@
   flex-flow: row nowrap;
   justify-content:flex-end;
   align-items: center;
-  gap: 50px;
+  gap:  1.3125rem;
 }
 .header .li{
   margin: 0 0.5em;
-  color: var(--VeryLightGray) !important;
+  color: var( --DarkGrayishViolet) !important;
   &:hover{
-    
     transition: all .5s ease-in-out;
+    color: var(--DarkViolet) !important;
   }
 }
 .btnTablet {
   display: none;
 }
-.bt{
-  display: flex;
-  gap: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  color: var( --VeryLightGray);
-  border-radius: 8px;
-  border: 5px solid var(--VeryLightGray);
-  cursor: pointer;
-  &:hover{
 
-    transition: all .5s ease-in-out;
+.btn{
+  display: block;
+  .-head{
+    border-radius: 0;
+    border: 1px solid var(--DarkViolet);
+    padding: 0.5rem 2rem;
+    color: var(--DarkViolet);
+    &:hover{
+      background-color: var(--DarkViolet);
+       color: var(--VeryLightGray);
+       transition: all .5s ease-in-out;
+     }
   }
-
-
-}
-.btnTablet {
-    display: none;
 }
 .close{
   display: none;
 }
-.header .button.activo{
-  .svg{
-    display: none;
-  }
-  .close{
-    display: block;
-  }
-}
-@media screen and (max-width:1274px){
+
+
+@media screen and (max-width:1023px){
   .wrapper{
     justify-content:space-between !important;
     align-items:center;
+    width: 100%;
   }
   .header .button{
     display: block;
@@ -100,18 +91,33 @@
    transition: all .5s ease-in-out;
    display:flex;
    flex-flow: column nowrap;
-   justify-content:center;
+   justify-content:flex-start;
    align-items: center;
   }
   .header .nav.activo{/*quando o botão estiver ativo */
     /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
     /*display: block;*/
-    height: 50vh;
+    height: 80vh;
     width: 100%;
     pointer-events: auto;
+    background-image: url(/images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    pointer-events: auto;
     background-color: var(--VeryDarkViolet);
- 
   }
+
+  .header .button.activo{
+    .svg{
+      display: none;
+    }
+    .close{
+      display: block;
+    }
+  }
+
+
   .close{
     display: none;
   }
@@ -129,71 +135,28 @@
   }
   .header .li{
     margin: 1em 0;
+    color: var( --VeryLightGray) !important;
   }
   .btn{
-    display: flex;
-    flex-direction: column;
-    border-color: var(--DarkViolet);
-    color: var(--DarkViolet);
+    display: block;
+    .-head{
+      border-radius: 0;
+      border: 1px solid var(--VeryLightGray);
+      padding: 1rem 5rem;
+      color: var(--VeryLightGray);
+    }
   }
+
   .btnTablet {
     display: none !important;
     width: 84%;
-}
-}
-@media screen and (max-width:1400px ){
-  .wrapper{
-    justify-content:center;
-    align-items:center;
   }
-  .header .button{
-    display: block;
-  }
-  .header .nav{/*quando o botão não estiver ativo */
-    width: 100%;
-   /* display: none;*/
-   overflow: hidden;
-   pointer-events: none;/*para não ter efeito no mouse*/
-   height: 0vh;
-   transition: all .5s ease-in-out;
-   display:flex;
-   flex-flow: column nowrap;
-   justify-content:center;
-   align-items: center;
-  }
-  .header .nav.activo{/*quando o botão estiver ativo */
-    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
-    /*display: block;*/
-    height: 50vh;
-    width: 100%;
-    pointer-events: auto;
-    background-image: url(/images/bg-pattern-intro-left-mobile.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size:cover;
 
-  }
-  .header .ul{
-    flex-direction: column;
-  }
-  .header .li{
-    margin: 1em 0;
-    color: var(--VeryDarkViolet);
-  }
-  .btnTablet {
-    display: flex;
-    width: 84%;
-    align-items: center;
-    justify-content:flex-end;
-    gap: 20px;
-    padding-inline:1em;
-    border-color: var(--DarkViolet);
-    color: var(--DarkViolet);
-    border:1px solid;
-  }
-  .btn{
-    display: none;
-  }
+
+
+
+
+  
 }
 
 
@@ -240,44 +203,89 @@
 /*process*/
 
 .process{
-
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3.125rem;
-  height: 79.6875rem;
   background-color: var(--VeryLightGray);
-  #linha-horizontal {
-    width: 9.375rem;
-    border: 1px solid var(--DarkViolet );
-  }
-  .h1 {
-    color:var(--negro);
-  }
-  .p{
-    color:var(--negro);
-  }
-
-  .h2{
-    text-align: center;
-    font-size:1.55rem;
-    line-height:2.25rem;
-    font-style: bold;
-  }
-  .prices{
-    display:flex;
+  padding-top: 5rem;
+  width: 100%;
+  .process-wrapper{
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 1rem;
+    gap: 3.125rem;
     width: 90%;
-    gap: 2.125rem;
-    .svg{
-      width: 20%;
+    max-width:1920px;
+    #linha-horizontal {
+      width: 9.375rem;
+      border: 1px solid var(--DarkViolet );
+    }
+    .h1 {
+      color:var( --VeryDarkViolet);
+    }
+    .p{
+      color:var(--DarkGrayishViolet);
+    }
+  
+    .h2{
+      text-align: center;
+      font-size:1.55rem;
+      line-height:2.25rem;
+      font-style: bold;
+    }
+    .price-liste{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3.125rem;
+
+      .prices{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        gap: 2.125rem;
+        .svg{
+          width: 20%;
+        }
+      }
     }
   }
 }
+@media screen and (min-width:920px){
+  .process{
+    .process-wrapper{
+      padding: 0;
+      align-items: flex-start;
+      .price-liste{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3.125rem;
+        .prices{
+          align-items: flex-start;
+          justify-content: center;
+          width: 90%;
+          gap: 1.125rem;
 
+          .p{
+            text-align: justify;
+          }
+        
+ 
+        }
+      }
+    }
+
+  }
+}
 
 /*about*/
 
@@ -299,9 +307,45 @@
     padding: 1rem;
     gap: 3rem;
     background-color:var(--DarkViolet);
+    background-image: url(/images/bg-pattern-how-we-work-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
   }
 }
 
+.bt{
+    border-radius: 0;
+    border: 1px solid var(--VeryLightGray);
+    padding: 0.5rem 2rem;
+    color: var(--VeryLightGray);
+    cursor: pointer;
+    &:hover{
+     background-color: var(--VeryLightGray);
+      color: var(--DarkViolet);
+      transition: all .5s ease-in-out;
+    }
+  }
+
+@media screen and (min-width:920px){
+  .about {
+    .-ab{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-around;
+      width: 90%;
+      height: 15.6875rem;
+      padding: 1rem;
+      gap: 3rem;
+      background-color:var(--DarkViolet);
+      background-image: url(/images/bg-pattern-how-we-work-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size:auto;
+    }
+  }
+}
 
 /*footer*/
 
@@ -312,6 +356,7 @@
   justify-content: space-between;
   gap: 3.125rem;
   padding: 1rem;
+  width: 100%;
   .insure{
     display: flex;
     flex-direction: column;
@@ -319,6 +364,7 @@
     justify-content:flex-end;
     gap: 2.125rem;
     height: 10.6875rem;
+    width: 90%;
     background-image: url(../images/bg-pattern-footer-mobile.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -347,6 +393,36 @@
     }
     h2{
       color: var(--VeryDarkViolet);
+    }
+  }
+}
+
+@media screen and (min-width:920px){
+  .footer{
+    .insure{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-between;
+      #linha-horizontal{
+        display: none;
+      }
+    }
+    .conjunto{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 90%;
+      max-width:1920px;
+  
+      gap: 8.125rem;
+    }
+    .topcos{
+      align-items: flex-start;
+      .text{
+        align-items: flex-start;
+        justify-content: center;
+      }
     }
   }
 }
