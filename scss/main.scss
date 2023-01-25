@@ -451,23 +451,33 @@
       justify-content: space-between;
     }
     .img{
-      width: 50%;
-      background-color: red;
-      position: relative;
+      width: 40%;
+      max-width: 51.5625rem;
       img{
-        position: absolute;
+        position: relative;
         left: 0;
         right: 0;
-        top: 0;
+        top: 10.625rem;
         bottom: 0;
       }
     }
     .text{
       width: 50%;
       align-items: flex-start;
+      .h1 {
+        text-align: left;
+        font-size: 4.25rem;
+        line-height: 4.25rem;
+        font-weight: 700;
+  
+    }
       .p{
         text-align: left;
       }
     }
+  }
+
+  .process{
+    padding-top: 15em;
   }
 }
