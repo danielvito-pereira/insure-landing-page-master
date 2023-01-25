@@ -72,94 +72,6 @@
   display: none;
 }
 
-
-@media screen and (max-width:1023px){
-  .wrapper{
-    justify-content:space-between !important;
-    align-items:center;
-    width: 100%;
-  }
-  .header .button{
-    display: block;
-  }
-  .header .nav{/*quando o botão não estiver ativo */
-    width: 100%;
-   /* display: none;*/
-   overflow: hidden;
-   pointer-events: none;/*para não ter efeito no mouse*/
-   height: 0vh;
-   transition: all .5s ease-in-out;
-   display:flex;
-   flex-flow: column nowrap;
-   justify-content:flex-start;
-   align-items: center;
-  }
-  .header .nav.activo{/*quando o botão estiver ativo */
-    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
-    /*display: block;*/
-    height: 80vh;
-    width: 100%;
-    pointer-events: auto;
-    background-image: url(/images/bg-pattern-mobile-nav.svg);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-    pointer-events: auto;
-    background-color: var(--VeryDarkViolet);
-  }
-
-  .header .button.activo{
-    .svg{
-      display: none;
-    }
-    .close{
-      display: block;
-    }
-  }
-
-
-  .close{
-    display: none;
-  }
-
-  .header .button.activo{
-    .svg{
-      display: none;
-    }
-    .close{
-      display: block;
-    }
-  }
-  .header .ul{
-    flex-direction: column;
-  }
-  .header .li{
-    margin: 1em 0;
-    color: var( --VeryLightGray) !important;
-  }
-  .btn{
-    display: block;
-    .-head{
-      border-radius: 0;
-      border: 1px solid var(--VeryLightGray);
-      padding: 1rem 5rem;
-      color: var(--VeryLightGray);
-    }
-  }
-
-  .btnTablet {
-    display: none !important;
-    width: 84%;
-  }
-
-
-
-
-
-  
-}
-
-
 /*main*/
 .main{
   display: flex;
@@ -168,7 +80,6 @@
   align-items: center;
   justify-content:center;
 }
-
 .h1{
   text-align: center;
   font-size:2.25rem;
@@ -189,6 +100,20 @@
   justify-content: center;
   align-items: center;
   background-color: var(--DarkViolet);
+  .hero{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .img{
+    width: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
   .text{
     display: flex;
     flex-direction: column;
@@ -199,9 +124,7 @@
     gap: 2.125rem;
   }
 }
-
 /*process*/
-
 .process{
   display:flex;
   flex-direction: column;
@@ -257,38 +180,7 @@
     }
   }
 }
-@media screen and (min-width:920px){
-  .process{
-    .process-wrapper{
-      padding: 0;
-      align-items: flex-start;
-      .price-liste{
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 3.125rem;
-        .prices{
-          align-items: flex-start;
-          justify-content: center;
-          width: 90%;
-          gap: 1.125rem;
-
-          .p{
-            text-align: justify;
-          }
-        
- 
-        }
-      }
-    }
-
-  }
-}
-
 /*about*/
-
 .about {
   display: flex;
   flex-direction: column;
@@ -313,7 +205,6 @@
     background-size: contain;
   }
 }
-
 .bt{
     border-radius: 0;
     border: 1px solid var(--VeryLightGray);
@@ -326,29 +217,7 @@
       transition: all .5s ease-in-out;
     }
   }
-
-@media screen and (min-width:920px){
-  .about {
-    .-ab{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content:space-around;
-      width: 90%;
-      height: 15.6875rem;
-      padding: 1rem;
-      gap: 3rem;
-      background-color:var(--DarkViolet);
-      background-image: url(/images/bg-pattern-how-we-work-desktop.svg);
-      background-repeat: no-repeat;
-      background-position: right;
-      background-size:auto;
-    }
-  }
-}
-
 /*footer*/
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -387,6 +256,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+
     }
     h1{
       color: var( --DarkGrayishViolet);
@@ -396,10 +266,152 @@
     }
   }
 }
+@media screen and (max-width:1023px){
+  .wrapper{
+    justify-content:space-between !important;
+    align-items:center;
+    width: 100%;
+  }
+  .header .button{
+    display: block;
+  }
+  .header .nav{/*quando o botão não estiver ativo */
+    width: 100%;
+   /* display: none;*/
+   overflow: hidden;
+   pointer-events: none;/*para não ter efeito no mouse*/
+   height: 0vh;
+   transition: all .5s ease-in-out;
+   display:flex;
+   flex-flow: column nowrap;
+   justify-content:flex-start;
+   align-items: center;
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 80vh;
+    width: 100%;
+    pointer-events: auto;
+    background-image: url(/images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    pointer-events: auto;
+    background-color: var(--VeryDarkViolet);
+  }
+  .header .button.activo{
+    .svg{
+      display: none;
+    }
+    .close{
+      display: block;
+    }
+  }
+  .close{
+    display: none;
+  }
+
+  .header .button.activo{
+    .svg{
+      display: none;
+    }
+    .close{
+      display: block;
+    }
+  }
+  .header .ul{
+    flex-direction: column;
+  }
+  .header .li{
+    margin: 1em 0;
+    color: var( --VeryLightGray) !important;
+  }
+  .btn{
+    display: block;
+    .-head{
+      border-radius: 0;
+      border: 1px solid var(--VeryLightGray);
+      padding: 1rem 5rem;
+      color: var(--VeryLightGray);
+    }
+  }
+
+  .btnTablet {
+    display: none !important;
+    width: 84%;
+  }
+
+}
+@media screen and (min-width:920px){
+  .process{
+    .process-wrapper{
+      padding: 0;
+      align-items: flex-start;
+      #linha-horizontal {
+        width: 8.375rem;
+        border: 1px solid var(--DarkGrayishViolet );
+      }
+      .h1 {
+        color:var( --VeryDarkViolet);
+        font-size: 3.30rem;
+        font-family: var(--tipo-secundaria);
+      }
+      .price-liste{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3.125rem;
+        margin-top: 3rem;
+        .prices{
+          align-items: flex-start;
+          justify-content: center;
+          width: 90%;
+          gap: 1.125rem;
+          .h2{
+            color:var( --VeryDarkViolet);
+            font-family: var(--tipo-secundaria);
+          }
+          .p{
+            text-align: justify;
+            font-family: var(--tipo-principal);
+          }
+        
+ 
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width:920px){
+  .about {
+    .-ab{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-around;
+      width: 90%;
+      height: 15.6875rem;
+      padding: 1rem;
+      gap: 3rem;
+      background-color:var(--DarkViolet);
+      background-image: url(/images/bg-pattern-how-we-work-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size:auto;
+      max-width: 120rem;
+    }
+  }
+}
 
 @media screen and (min-width:920px){
   .footer{
     .insure{
+      max-width: 120rem;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -422,6 +434,39 @@
       .text{
         align-items: flex-start;
         justify-content: center;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width:580px){
+  .hero-section {
+    flex-flow: row-reverse nowrap;
+    .hero{
+      width: 90%;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .img{
+      width: 50%;
+      background-color: red;
+      position: relative;
+      img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+    .text{
+      width: 50%;
+      align-items: flex-start;
+      .p{
+        text-align: left;
       }
     }
   }
